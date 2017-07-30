@@ -1,5 +1,5 @@
 FROM jenkins:alpine
-MAINTAINER Bhavik Kumar <contact@bhavik.io>
+MAINTAINER Dominik Schön <dominik@familie-schoen.com>
 
 # Switch to root
 USER root
