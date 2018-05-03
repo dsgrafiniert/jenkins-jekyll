@@ -1,4 +1,4 @@
-FROM jenkins/jenkins:lts-alpine
+FROM jenkins/jenkins:alpine
 MAINTAINER Dominik Schön <dominik@familie-schoen.com>
 
 # Switch to root
