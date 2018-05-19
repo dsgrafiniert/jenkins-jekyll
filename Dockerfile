@@ -8,7 +8,8 @@ USER root
 RUN apk update && apk upgrade
 
 # Install pre-reqs for Jekyll
-RUN apk --update --no-cache add build-base ruby ruby-dev ruby-rdoc ruby-irb ruby-json ruby-rake ruby-io-console libffi-dev docker
+RUN apk --update --no-cache add build-base ruby ruby-dev ruby-rdoc ruby-irb ruby-json ruby-rake ruby-io-console libffi-dev docker python python-dev py-pip 
+RUN pip install virtualenv
 
 # ENV VERSION=v4.9.1 NPM_VERSION=2
 # ENV VERSION=v6.14.2 NPM_VERSION=3
