@@ -74,6 +74,7 @@ RUN gem clean && gem sources --clear-all
 RUN apk del build-base libffi-dev ruby-dev
 RUN rm -rf /usr/lib/ruby/gems/*/cache/*.gem
 RUN chown -R jenkins /usr/lib/python2.7/site-packages
+RUN chmod -R 0777 /usr/bin/*
 
 # Switch back to jenkins
 USER jenkins
