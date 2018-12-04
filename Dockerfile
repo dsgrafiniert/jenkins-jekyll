@@ -26,6 +26,7 @@ RUN pip install virtualenv
 
 
 RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
+RUN curl -L https://raw.githubusercontent.com/jgsqware/clairctl/master/install.sh | sh
 RUN apt-get install -y nodejs
 
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
@@ -43,3 +44,4 @@ RUN rm -rf /usr/lib/ruby/gems/*/cache/*.gem
 USER jenkins
 
 ENV DOCKER_GID_ON_HOST ""
+COPY jenkins.sh /usr/local/bin/jenkins.sh
