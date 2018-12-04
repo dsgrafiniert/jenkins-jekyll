@@ -12,7 +12,7 @@ RUN apt-get -y upgrade
 RUN apt-get -y install zip maven build-essential ruby libffi-dev python python-dev python-pip apt-transport-https ca-certificates curl software-properties-common
 RUN apt-get --no-install-recommends -y install fakeroot
 RUN apt-get --no-install-recommends -y install sudo && \
-echo "jenkins ALL = (ALL) NOPASSWD: ALL" >> /etc/sudoers
+	echo "jenkins ALL = (ALL) NOPASSWD: ALL" >> /etc/sudoers
 
 RUN pip install virtualenv
 
@@ -38,10 +38,8 @@ RUN apt-get update && apt-get -y install yarn
 # Clean up
 
 RUN rm -rf /usr/lib/ruby/gems/*/cache/*.gem
-RUN chmod -R 0777 /usr/bin/*
 
 # Switch back to jenkins
 USER jenkins
 
 ENV DOCKER_GID_ON_HOST ""
-COPY jenkins.sh /usr/local/bin/jenkins.sh
